@@ -1,0 +1,19 @@
+name: PR Test
+on:
+  pull_request_target:
+    types: [opened, edited, synchronize]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Log PR title
+        run: echo "PR Title: ${{ github.event.pull_request.title }}"
+
+      - name: Log PR body
+        run: echo "PR Body: ${{ github.event.pull_request.body }}"
+
+      - name: Log branch name
+        run: echo "Branch: ${{ github.event.pull_request.head.ref }}"
