@@ -10,10 +10,13 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Log PR title
-        run: echo "PR Title: ${{ github.event.pull_request.title }}"
+        run: |
+          echo "PR Title: ${{ github.event.pull_request.title }}"
 
       - name: Log PR body
-        run: echo "PR Body: ${{ github.event.pull_request.body }}"
+        run: |
+          echo "PR Body: ${{ github.event.pull_request.body }}"
 
       - name: Log branch name
-        run: echo "Branch: ${{ github.event.pull_request.head.ref }}"
+        run: |
+          echo "Branch: ${{ github.event.pull_request.head.ref }}"
